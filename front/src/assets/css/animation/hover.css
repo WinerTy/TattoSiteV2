@@ -1,0 +1,58 @@
+.hover-btn {
+    display: inline-block; /* Делаем элемент <a> блочным, чтобы он мог иметь отступы и размеры */
+    position: relative;
+    padding: 1.4rem 4.2rem;
+    padding-right: 3.1rem;
+    font-size: 1.4rem;
+    color: var(--inv);
+    letter-spacing: 1.1rem;
+    text-transform: uppercase;
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden; /* Добавляем overflow для скрытия элементов за пределами кнопки */
+}
+
+.hover-btn::before,
+.hover-btn::after {
+    content: '';
+    position: absolute;
+    transition: inherit;
+    z-index: -1;
+}
+
+.hover-btn::before {
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 0;
+    border: 1px solid var(--inv);
+    border-left: 0;
+    border-right: 0;
+    transition-delay: 0s;
+}
+
+.hover-btn::after {
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    background: var(--inv);
+    transition-delay: .35s;
+}
+
+.hover-btn:hover {
+    color: var(--def);
+    transition-delay: .5s;
+}
+
+.hover-btn:hover::before {
+    left: 0;
+    width: 100%;
+}
+
+.hover-btn:hover::after {
+    top: 0;
+    height: 100%;
+}

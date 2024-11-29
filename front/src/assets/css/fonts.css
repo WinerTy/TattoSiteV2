@@ -1,0 +1,56 @@
+
+@font-face {
+    font-family: 'Desyatiy';
+    src: url('../fonts/Desyatiy/Desyatiy Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Desyatiy';
+    src: url('../fonts/Desyatiy/Desyatiy Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Desyatiy';
+    src: url('../fonts/Desyatiy/Desyatiy Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Подключение шрифта Leonov */
+@font-face {
+    font-family: 'Leonov';
+    src: url('../fonts/Leonov/LeonovSP.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.des {
+    font-family: 'Desyatiy', sans-serif;
+}
+
+.des-l {
+    font-family: 'Desyatiy', sans-serif;
+    font-weight: 300;
+}
+
+.des-b {
+    font-family: 'Desyatiy', sans-serif;
+    font-weight: bold;
+}
+
+.leonov {
+    font-family: 'Leonov', sans-serif;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'leonov', sans-serif;
+}
