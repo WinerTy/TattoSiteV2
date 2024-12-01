@@ -1,5 +1,5 @@
 import { api } from '@/utils/api'
-import type { Salon } from '@/utils/api/services/salon.type'
+import type { Salon } from '@/utils/api/services/salon/salon.type'
 import { defineStore } from 'pinia'
 
 interface SalonState {
@@ -25,13 +25,14 @@ export const useSalonStore = defineStore('salon', {
         this.salons = (await api.salon.getSalons()).data.results
         // Если есть сохраненный ID, но салон еще не загружен
         if (this.selectedSalonId && !this.selectedSalon) {
-          const exists = this.salons.some(salon => salon.id === this.selectedSalonId)
+          const exists = this.salons.some((salon) => salon.id === this.selectedSalonId)
           if (!exists) {
             this.selectedSalonId = null
             localStorage.removeItem('selectedSalonId')
           }
         }
       } catch (error) {
+        console.error(error)
         this.error = 'Error fetching salons'
       } finally {
         this.loading = false
@@ -47,9 +48,9 @@ export const useSalonStore = defineStore('salon', {
   },
   getters: {
     selectedSalon: (state): Salon | null => {
-      return state.selectedSalonId 
-        ? state.salons.find(salon => salon.id === state.selectedSalonId) || null 
+      return state.selectedSalonId
+        ? state.salons.find((salon) => salon.id === state.selectedSalonId) || null
         : null
-    }
-  }
+    },
+  },
 })
